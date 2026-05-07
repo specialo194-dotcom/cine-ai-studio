@@ -1,0 +1,77 @@
+:root {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0.01 250 / 0.8);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.1 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.6 0.25 280); /* Deep Purple */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.7 0.2 190); /* Cyan Accent */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.6 0.2 20);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.2 0 0 / 0.5);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.6 0.25 280);
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  background-image: 
+    radial-gradient(at 0% 0%, oklch(0.15 0.1 280 / 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, oklch(0.2 0.1 190 / 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.cinematic-gradient {
+  background: linear-gradient(135deg, oklch(0.6 0.25 280), oklch(0.7 0.2 190));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.timeline-track {
+  height: 3rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-thumb {
+  position: absolute;
+  height: 100%;
+  background: rgba(124, 58, 237, 0.4);
+  border-left: 1px solid oklch(0.6 0.25 280);
+  border-right: 1px solid oklch(0.6 0.25 280);
+  width: 8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.timeline-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
